@@ -6,7 +6,7 @@ function [ config ] = read( configfile, rootNode )
     % extract ctcom node
     ctcomNode = configTree.getElementsByTagName(rootNode).item(0);
     
-    if ~strcmp('ctcom', ctcomNode.getNodeName())
+    if ~strcmp(rootNode, ctcomNode.getNodeName())
         error('Could not extract root node from config file');
     end
     
